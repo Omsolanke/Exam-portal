@@ -1,0 +1,106 @@
+<div class="quiz-container container mt-4">
+  <!-- Quiz Instructions -->
+  <div *ngIf="!quizStarted" class="instructions-card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="text-center">📘 Quiz Instructions</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li>✔️ Total Questions: <b>{{ questions.length }}</b></li>
+          <li>✔️ Each question carries equal marks.</li>
+          <li>✔️ Only one option can be selected.</li>
+          <li>✔️ No negative marking.</li>
+          <li>✔️ Once submitted, you cannot go back.</li>
+          <li>⏱️ Time Allowed: <b>{{ questions.length * 2 }} minutes</b></li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary" (click)="startQuiz()">
+          Start Quiz
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Ongoing Quiz -->
+  <div *ngIf="quizStarted && !isSubmitted">
+    <h2 class="text-center mb-3">
+      📝 Ongoing Quiz <b>{{ questions[0]?.quiz?.title }}</b>
+    </h2>
+
+    <!-- Timer + Attempted -->
+    <div class="d-flex justify-content-between mb-2">
+      <p>⏳ Time Left: <b>{{ formatTime(timeLeft) }}</b></p>
+      <p>📝 Attempted: <b>{{ getAttemptedCount() }}/{{ questions.length }}</b></p>
+    </div>
+
+    <!-- Progress Bar -->
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+    <p class="text-center mt-2">Progress: {{ progress }}%</p>
+
+    <mat-card
+      *ngFor="let q of questions; let i = index"
+      class="mb-3 question-card"
+    >
+      <mat-card-content>
+        <h3>Q{{ i + 1 }}. <b [innerHTML]="q.content"></b></h3>
+
+        <div class="options mt-2">
+          <mat-radio-group
+            [(ngModel)]="selectedOptions[q.quesId]"
+            (change)="updateProgress()"
+          >
+            <mat-radio-button class="option-btn" [value]="q.option1">{{
+              q.option1
+            }}</mat-radio-button
+            ><br />
+            <mat-radio-button class="option-btn" [value]="q.option2">{{
+              q.option2
+            }}</mat-radio-button
+            ><br />
+            <mat-radio-button class="option-btn" [value]="q.option3">{{
+              q.option3
+            }}</mat-radio-button
+            ><br />
+            <mat-radio-button class="option-btn" [value]="q.option4">{{
+              q.option4
+            }}</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="text-center mt-4">
+      <button mat-raised-button color="accent" (click)="submitQuiz()">
+        Submit Quiz
+      </button>
+    </div>
+  </div>
+
+  <!-- Result Section -->
+  <div class="result-wrapper text-center mt-4" *ngIf="isSubmitted">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>✅ Quiz Result</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><b>Total Questions:</b> {{ questions.length }}</p>
+        <p><b>Attempted:</b> {{ getAttemptedCount() }}</p>
+        <p><b>Correct Answers:</b> {{ correctAnswers }}</p>
+        <p><b>Your Score:</b> {{ score }}</p>
+        <p><b>Marks Obtained:</b> {{ marksGot }}</p>
+        <button
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/user-dashboard/0']"
+          routerLinkActive="router-link-active"
+        >
+          Home
+        </button>
+        &nbsp;
+        <button (click)="printResult()" mat-raised-button color="accent">Print</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

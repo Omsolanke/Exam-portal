@@ -1,0 +1,29 @@
+
+<mat-card class="sidebar-card mat-elevation-z4">
+  <mat-action-list>
+    <div mat-subheader class="sidebar-header">
+      📂 Available Categories
+    </div>
+
+    <!-- All Quizzes -->
+    <div 
+      class="sidebar-item" 
+      routerLink="/user-dashboard/0"
+      routerLinkActive="active-link"
+    >
+      <mat-icon>quiz</mat-icon>
+      <span>All Quizzes</span>
+    </div>
+
+    <!-- Dynamic Categories -->
+    <div 
+      class="sidebar-item" 
+      *ngFor="let c of categories"
+      [routerLink]="'/user-dashboard/' + c.cid"
+      routerLinkActive="active-link"
+    >
+      <mat-icon>quiz</mat-icon>
+      <span>{{ c.title }}</span>
+    </div>
+  </mat-action-list>
+</mat-card>

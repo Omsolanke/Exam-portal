@@ -1,0 +1,90 @@
+<mat-card class="add-quiz-card shadow-card">
+  <h2 class="title">✏️ Update Quiz</h2>
+
+  <form *ngIf="quiz" (submit)="updateData()">
+    <!-- Title -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Quiz Title</mat-label>
+      <input
+        [(ngModel)]="quiz.title"
+        matInput
+        type="text"
+        name="title"
+        placeholder="e.g., Java Basics Quiz"
+        required />
+      <mat-icon matSuffix>title</mat-icon>
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea
+        [(ngModel)]="quiz.description"
+        matInput
+        rows="3"
+        name="description"
+        placeholder="Brief description about the quiz..."
+        required></textarea>
+      <mat-icon matSuffix>description</mat-icon>
+    </mat-form-field>
+
+    <div class="row">
+      <!-- Max Marks -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Max Marks</mat-label>
+          <input
+            [(ngModel)]="quiz.maxMarks"
+            matInput
+            type="number"
+            name="maxMarks"
+            placeholder="e.g., 100"
+            required />
+          <mat-icon matSuffix>score</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <!-- Number of Questions -->
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Number of Questions</mat-label>
+          <input
+            [(ngModel)]="quiz.numberOfQuestions"
+            matInput
+            type="number"
+            name="numberOfQuestions"
+            placeholder="e.g., 10"
+            required />
+          <mat-icon matSuffix>quiz</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Publish Toggle -->
+    <mat-slide-toggle
+      [(ngModel)]="quiz.active"
+      name="active"
+      color="accent"
+      class="toggle-field">
+      Publish Status
+    </mat-slide-toggle>
+
+    <!-- Category Dropdown -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Select Category</mat-label>
+      <mat-select name="category" [(ngModel)]="quiz.category">
+        <mat-option *ngFor="let c of categories" [value]="c">
+          {{ c.title }}
+        </mat-option>
+      </mat-select>
+      <mat-icon matSuffix>category</mat-icon>
+    </mat-form-field>
+
+    <!-- Submit Button -->
+    <div class="text-center mt-4">
+      <button mat-raised-button color="accent" type="submit" class="submit-btn">
+        🚀 Update Quiz
+      </button>
+    </div>
+  </form>
+</mat-card>

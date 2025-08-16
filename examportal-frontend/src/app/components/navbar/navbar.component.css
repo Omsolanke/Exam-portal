@@ -1,0 +1,28 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 16px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  font-weight: 600;
+  color: #fff;
+}
+
+mat-icon {
+  vertical-align: middle;
+}

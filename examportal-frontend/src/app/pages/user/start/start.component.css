@@ -1,0 +1,54 @@
+.quiz-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.shadow-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.instructions-list li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.question-card {
+  padding: 12px;
+  transition: transform 0.2s;
+}
+.question-card:hover {
+  transform: scale(1.01);
+}
+
+.option-btn {
+  margin: 6px 0;
+}
+
+.result-card {
+  background: #f9f9f9;
+}
+
+.status-bar p {
+  font-size: 16px;
+  margin: 0;
+}
+.quiz-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.instructions, .quiz-wrapper, .timer {
+  flex: 1;
+}
+
+.shadow-card {
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+  border-radius: 12px;
+}
+
+.timer-text h3 {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #d32f2f;
+}

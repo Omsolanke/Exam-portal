@@ -1,0 +1,60 @@
+<h1 class="page-title">➕ Add New Question to {{ qTitle }}</h1>
+
+<div class="add-question-container">
+  <mat-card>
+    <form (submit)="formSubmit()" >
+
+      <!-- Question Content -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Question Content</mat-label>
+        <textarea matInput rows="4" name="content" [(ngModel)]="question.content" required></textarea>
+      </mat-form-field>
+      
+
+      <!-- Options -->
+      <div class="options-grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Option 1</mat-label>
+          <input matInput name="option1" [(ngModel)]="question.option1" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Option 2</mat-label>
+          <input matInput name="option2" [(ngModel)]="question.option2" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Option 3</mat-label>
+          <input matInput name="option3" [(ngModel)]="question.option3" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Option 4</mat-label>
+          <input matInput name="option4" [(ngModel)]="question.option4" />
+        </mat-form-field>
+      </div>
+
+      <!-- Correct Answer -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Correct Answer</mat-label>
+        <mat-select name="answer" [(ngModel)]="question.answer" required>
+          <mat-option [value]="question.option1">Option 1</mat-option>
+          <mat-option [value]="question.option2">Option 2</mat-option>
+          <mat-option [value]="question.option3">Option 3</mat-option>
+          <mat-option [value]="question.option4">Option 4</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit">
+          💾 Save Question
+        </button>
+        <button mat-stroked-button color="warn" type="reset">
+          ❌ Clear
+        </button>
+      </div>
+
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,21 @@
+<div class="admin-dashboard">
+  <div class="overlay"></div>
+  
+  <div class="welcome-card">
+    <mat-icon class="admin-icon">admin_panel_settings</mat-icon>
+    <h1>Welcome, Admin!</h1>
+    <p>Manage quizzes, categories, and users with ease.</p>
+
+    <div class="quick-actions">
+      <button mat-raised-button color="primary" routerLink="/admin/quizzes">
+        <mat-icon>quiz</mat-icon> Manage Quizzes
+      </button>
+      <button mat-raised-button color="accent" routerLink="/admin/categories">
+        <mat-icon>category</mat-icon> Manage Categories
+      </button>
+      <button mat-raised-button color="warn" routerLink="/admin/users">
+        <mat-icon>people</mat-icon> Manage Users
+      </button>
+    </div>
+  </div>
+</div>

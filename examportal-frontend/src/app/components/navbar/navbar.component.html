@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="navbar">
+  <span class="brand">
+    <mat-icon routerLink="/">school</mat-icon> Exam Portal
+  </span>
+
+  <span class="spacer"></span>
+
+  <button *ngIf="!isLoggedIn" mat-button routerLink="/login">
+    <mat-icon>login</mat-icon> Login
+  </button>
+
+  <button *ngIf="!isLoggedIn" mat-button routerLink="/signup">
+    <mat-icon>person_add</mat-icon> Register
+  </button>
+
+  <button *ngIf="isLoggedIn"  mat-button>
+    {{login.getUser()?.username}}
+  </button>
+
+  <button *ngIf="isLoggedIn" (click)="logout()" mat-button>
+    <mat-icon>logout</mat-icon> Logout
+  </button>
+</mat-toolbar>

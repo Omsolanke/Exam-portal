@@ -1,0 +1,70 @@
+.instruction-wrapper {
+  background: url('/assets/images/exam-bg.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.instruction-card {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 20px;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+mat-card-title h2 {
+  font-weight: bold;
+  color: #2c3e50;
+
+align-items: center;
+}
+
+mat-card-subtitle {
+  color: #7f8c8d;
+}
+
+.quiz-info h3 {
+  margin: 0;
+  color: #34495e;
+}
+
+.quiz-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.instructions-section {
+  margin-top: 20px;
+}
+
+.instructions-section h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.instructions-section ul {
+  padding-left: 20px;
+}
+
+.instructions-section li {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

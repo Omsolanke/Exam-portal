@@ -1,0 +1,24 @@
+.login-container {
+  min-height: 100vh;
+   background: url(../../../assets/loginlogo.jpg);
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  max-width: 400px;
+  width: 100%;
+}
+
+.snackbar-success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: #f44336;
+  color: white;
+}

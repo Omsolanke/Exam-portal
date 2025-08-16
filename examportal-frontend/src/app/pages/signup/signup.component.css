@@ -1,0 +1,23 @@
+.full-width {
+  width: 100%;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  border-radius: 1.5rem;
+  color: white;
+}
+.snackbar-success {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.snackbar-error {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+

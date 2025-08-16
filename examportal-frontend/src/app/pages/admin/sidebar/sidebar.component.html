@@ -1,0 +1,69 @@
+<mat-card>
+  <mat-action-list>
+    <div mat-subheader>Menu</div>
+
+    <!-- Home Item -->
+    <div
+      style="display: flex; align-items: center; padding: 10px; cursor: pointer;"
+      routerLink="/admin"
+      routerLinkActive="active-link"
+    >
+      <mat-icon style="margin-right: 8px;">home</mat-icon>
+      <span>Home</span>
+    </div>
+
+    <!-- Profile Item -->
+    <div
+      style="display: flex; align-items: center; padding: 10px; cursor: pointer;"
+      routerLink="/admin/profile"
+      routerLinkActive="active-link"
+    >
+      <mat-icon style="margin-right: 8px;">account_circle</mat-icon>
+      <span>Profile</span>
+    </div>
+
+      <div
+      style="display: flex; align-items: center; padding: 10px; cursor: pointer;"
+      routerLink="/admin/categories"
+      routerLinkActive="active-link"
+    >
+      <mat-icon style="margin-right: 8px;">list</mat-icon>
+      <span>Categories</span>
+    </div>
+     <div
+      style="display: flex; align-items: center; padding: 10px; cursor: pointer;"
+      routerLink="/admin/add-category"
+      routerLinkActive="active-link"
+    >
+      <mat-icon style="margin-right: 8px;">add_circle_outline</mat-icon>
+      <span>Add Categories</span>
+    </div>
+
+     <div
+      style="display: flex; align-items: center; padding: 10px; cursor: pointer;"
+      routerLink="/admin/quizzes"
+      routerLinkActive="active-link"
+    >
+      <mat-icon style="margin-right: 8px;">quiz</mat-icon>
+      <span>Quizzes</span>
+    </div>
+
+     <div
+      style="display: flex; align-items: center; padding: 10px; cursor: pointer;"
+      routerLink="/admin/add-quiz"
+      routerLinkActive="active-link"
+    >
+      <mat-icon style="margin-right: 8px;">add</mat-icon>
+      <span>Add Quiz</span>
+    </div>
+
+     <div
+      style="display: flex; align-items: center; padding: 10px; cursor: pointer;"
+      routerLink="/login"
+      routerLinkActive="active-link"
+    >
+      <mat-icon style="margin-right: 8px;">logout</mat-icon>
+      <span>Logout</span>
+    </div>
+  </mat-action-list>
+</mat-card>

@@ -1,0 +1,57 @@
+<div class="instruction-wrapper">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <mat-card class="instruction-card mat-elevation-z8">
+          <mat-card-header>
+            <mat-card-title>
+              <h2>📜 Read the Instructions Carefully</h2>
+            </mat-card-title>
+            <mat-card-subtitle>One step more to go 🚀</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <!-- Quiz Info -->
+            <section class="quiz-info">
+              <h2>{{ quiz?.title }}</h2>
+              <p>{{ quiz?.description }}</p>
+            </section>
+           <mat-divider></mat-divider>
+            <!-- Important Instructions -->
+            <section class="instructions-section">
+              <h4>Important Instructions</h4>
+              <ul>
+                <li>This quiz is for practice purposes only.</li>
+                <li>You must submit the quiz within <strong> 30 Minutes</strong>.</li>
+                <li>You can attempt the quiz multiple times.</li>
+                <li>There are <strong>{{ quiz?.numberOfQuestions }} questions</strong> in this quiz.</li>
+                <li>Each question carries <strong>{{ quiz?.maxMarks }} marks</strong>. No negative marking for wrong answers.</li>
+                <li>All questions are multiple-choice.</li>
+              </ul>
+            </section>
+            <mat-divider></mat-divider>
+            <!-- How to Attempt -->
+            <section class="instructions-section">
+              <h4>Attempting the Quiz</h4>
+              <ul>
+                <li>Click the <strong>Start Quiz</strong> button to begin.</li>
+                <li>The timer starts immediately after you click "Start Quiz".</li>
+                <li>You cannot resume if interrupted for any reason.</li>
+                <li>Scroll to navigate between questions.</li>
+                <li>Click "Submit Quiz" when you finish.</li>
+                <li>Your result will be generated automatically.</li>
+              </ul>
+            </section>
+          </mat-card-content>
+
+          <mat-card-actions class="action-buttons">
+            <button mat-stroked-button color="warn" routerLink="/user-dashboard">Cancel</button>
+            <button mat-raised-button color="accent" (click)="startQuiz()">
+              Start Quiz
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

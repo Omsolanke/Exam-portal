@@ -1,0 +1,51 @@
+<mat-card>
+<h1 style="display: flex; justify-content: center; font-weight: bold; font-size: 28px; margin-bottom: 20px;">
+    Your Profile Details
+  </h1>
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="container text-center">
+          <img
+            src="https://img.freepik.com/premium-vector/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-vector-illustration_561158-3383.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Profile Image"
+            class="profile-image"
+          />
+          <h2 class="mt-20">{{user.firstName}} {{user.lastName}}</h2>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-md-10 offset-md-1">
+            <table class="table table-bordered profile-table">
+              <tr>
+                <th>Username</th>
+                <td>{{user.username}}</td>
+              </tr>
+              <tr>
+                <th>ID</th>
+                <td>EXAM{{user.id}}</td>
+              </tr>
+              <tr>
+                <th>Phone No</th>
+                <td>{{user.phone}}</td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>{{user.enabled? "ACTIVE": "NOTACTIVE"}}</td>
+              </tr>
+              <tr>
+                <th>Role</th>
+                <td>{{user.authorities[0].authority}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="button-group">
+    <button mat-raised-button color="primary">UPDATE</button>
+    <button mat-raised-button color="accent">SHARE</button>
+  </mat-card-actions>
+
+</mat-card>

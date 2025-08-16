@@ -1,0 +1,39 @@
+.page-title {
+  text-align: center;
+  margin: 20px 0;
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+.question-card {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.question-text {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.answer {
+  font-weight: bold;
+  color: #2e7d32;
+}
